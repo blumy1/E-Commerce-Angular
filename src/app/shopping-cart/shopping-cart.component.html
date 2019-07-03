@@ -1,1 +1,29 @@
-<p>shopping-cart works!</p>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="product-col">Product</th>
+        <th class="price-col">Price</th>
+        <th class="quantity-col">Quantity</th>
+        <th class="actions-col"></th>
+      </tr>
+    </thead>
+    <tbody class="cart-body">
+      <tr *ngFor="let i of [1,2,3,4,5,6]">
+        <td class="product">
+          <img src="http://placehold.it/100x100" alt="..." class="product-img img-responsive" />
+          <div class="product-body">
+            <h4>Product {{ i }}</h4>
+            <p class="description">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem
+              ipsum dolor sit amet.</p>
+          </div>
+        </td>
+        <td>${{ i }}9.99</td>
+        <td>{{ i }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
