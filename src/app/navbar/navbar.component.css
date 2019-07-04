@@ -1,3 +1,17 @@
 .wrapper {
   padding-bottom: 56px;
 }
+
+#loginButton {
+  margin-left: 30px;
+}
+
+#registerButton {
+  margin-left: 10px;
+}
+
+@media(max-width: 991px) {
+  #loginButton {
+    margin-left: 0;
+  }
+}

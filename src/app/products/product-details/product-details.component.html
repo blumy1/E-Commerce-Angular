@@ -1,15 +1,20 @@
 <div class="container">
   <div class="card mt-4">
-    <img class="card-img-top img-fluid" src="http://placehold.it/1100x550" alt="">
+    <img id="productImage" class="card-img-top img-fluid mx-auto" src="{{ (product$ | async)?.imageUrl }}"
+      alt="Product image">
     <div class="card-body">
-      <h3 class="card-title">Product Name</h3>
-      <h4>$24.99</h4>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic
-        aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis
-        molestias iure, ducimus!</p>
+      <h3 class="card-title">{{ (product$ | async)?.name }}</h3>
+      <h4>{{ (product$ | async)?.price?.amount | number: '1.2' | currency}}</h4>
+      <p class="card-text">{{ (product$ | async)?.description }}</p>
       <p><span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
         4.0 stars</p>
-      <a routerLink="/cart" class="btn btn-primary">Add to cart</a>
+      <button type="button" *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="btn btn-primary">
+        Add to cart
+      </button>
+      <button type="button" (click)="addToCart()" *ngIf="loginService.isUserLoggedIn()" class="btn btn-primary" data-toggle="modal"
+        data-target="#exampleModal">
+        Add to cart
+      </button>
     </div>
   </div>
 
@@ -34,6 +39,27 @@
       <small class="text-muted">Posted by Anonymous on 3/1/17</small>
       <hr>
       <a href="#" class="btn btn-success">Leave a Review</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You have added a product to a cart
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue shopping</button>
+        <a routerLink="/cart" class="btn btn-primary" data-dismiss="modal">Show cart</a>
+      </div>
     </div>
   </div>
 </div>

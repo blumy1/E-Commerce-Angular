@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +14,8 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { TruncatePipe } from './shared/pipes/truncate.pipe';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +28,15 @@ import { RegisterComponent } from './register/register.component';
     ProductDetailsComponent,
     ShoppingCartComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TruncatePipe,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

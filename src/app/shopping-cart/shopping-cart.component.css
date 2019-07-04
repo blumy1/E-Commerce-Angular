@@ -2,20 +2,21 @@
   margin-top: 20px;
 }
 
+a {
+  text-decoration: none;
+  color: #212529;
+}
+
 th.product-col {
-  width: 70%;
+  width: 75%;
 }
 
 th.price-col {
-  width: 12%;
-}
-
-th.quantity-col {
-  width: 12%;
+  width: 20%;
 }
 
 th.actions-col {
-  width: 6%;
+  width: 5%;
 }
 
 .table {
@@ -42,6 +43,18 @@ th.actions-col {
 
 .product-body {
   margin-left: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.actions h5 {
+  margin: 0;
+  margin-left: auto;
+  margin-right: 30px;
 }
 
 @media(max-width: 767px) {

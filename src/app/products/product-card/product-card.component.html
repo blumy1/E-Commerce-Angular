@@ -1,9 +1,9 @@
 <div class="card h-100">
-  <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+  <a routerLink="/products/{{ product.id }}"><img class="card-img-top" src="{{ product?.imageUrl }}" alt=""></a>
   <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-      neque sequi doloribus.</p>
-    <a routerLink="/products/1" class="btn btn-primary">See Details</a>
+    <h4 class="card-title">{{ product?.name | truncate : 37}}</h4>
+    <p class="card-text">{{ product?.description | truncate : 100 }}</p>
+    <h5 class="card-text">{{ product?.price.amount | number: '1.2' | currency}}</h5>
+    <a id="detailsLink" routerLink="/products/{{ product.id }}" class="btn btn-primary">See Details</a>
   </div>
 </div>
