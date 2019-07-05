@@ -1,4 +1,18 @@
-# EcommerceAngular
+# E-Commerce-Angular
+Simple Angular e-commerce application connected to Spring back-end.
+Project has been started only in educational purposes.
+
+## TODO:
+- Set order address,
+- User Authorization,
+- Product filtering,
+- Sales,
+- Account settings,
+- Not found page,
+- Improve cart management,
+- Error messages in forms.
+
+# Ecommerce Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
 
