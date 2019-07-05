@@ -42,7 +42,7 @@ th.actions-col {
 }
 
 .product-body {
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 .actions {
@@ -55,6 +55,7 @@ th.actions-col {
   margin: 0;
   margin-left: auto;
   margin-right: 30px;
+  text-align: center;
 }
 
 @media(max-width: 767px) {
@@ -66,5 +67,9 @@ th.actions-col {
 @media(max-width: 550px) {
   .product .product-img {
     display: none;
+  }
+
+  .actions h5 {
+    margin-right: 5px;
   }
 }

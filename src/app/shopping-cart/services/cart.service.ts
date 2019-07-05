@@ -23,6 +23,10 @@ export class CartService {
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
+  deleteAllProducts() {
+    this.cart.splice(0, this.cart.length);
+  }
+
   getProducts() {
     return this.cart;
   }

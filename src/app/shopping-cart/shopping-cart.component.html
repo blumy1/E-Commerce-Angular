@@ -8,15 +8,13 @@
       </tr>
     </thead>
     <tbody class="cart-body">
-      <tr *ngFor="let product of cartService.getProducts()">
+      <tr *ngFor="let product of cartContent">
         <a routerLink="/products/{{ product.id }}">
           <td class="product">
             <img src="{{ product?.imageUrl }}" alt="..." class="product-img img-responsive" />
             <div class="product-body">
-              <h4>{{ product?.name }}</h4>
-              <p class="description">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Lorem
-                ipsum dolor sit amet.</p>
+              <h4>{{ product?.name | titlecase}}</h4>
+              <p class="description">{{ product?.description | truncate: 220}}</p>
             </div>
           </td>
         </a>
@@ -30,6 +28,6 @@
   <div class="actions">
     <button class="btn btn-warning text-light" (click)="back()"><span class="fa fa-angle-left"></span> Continue shopping</button>
     <h5>Total: {{ total | number: '1.2' | currency }}</h5>
-    <button class="btn btn-success" *ngIf="cartContent.length > 0" (click)="cartService.checkout()">Checkout <span class="fa fa-angle-right"></span></button>
+    <button class="btn btn-success" *ngIf="cartContent.length > 0" (click)="checkout()">Checkout <span class="fa fa-angle-right"></span></button>
   </div>
 </div>
