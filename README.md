@@ -5,6 +5,7 @@ Project has been started only in educational purposes.
 ## TODO:
 - Set order address,
 - User Authorization,
+- Categories,
 - Product filtering,
 - Sales,
 - Account settings,
